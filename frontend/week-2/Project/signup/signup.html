@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Signup</title>
+    <meta name="description" content="Signup Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+    <div id="outer-container">
+        <div id="background">
+
+            <div id="rectangle">
+                <div class="logo-container">
+                    <img id="logo" src="./assets/images/logo.png" alt="">
+                </div>
+                <p id="login">Signup</p>
+                <div>
+                    <form action="/submitform" method="post">
+                        <lable for="email" class="fieldName">Email</lable>
+                        <div class="container">
+                            <input class="field" placeholder="Enter your email-id" type="email" name="email">
+                        </div>
+
+                        
+                        <lable for="password" class="fieldName">Password</lable>
+                        <div class="password-container container">
+                            <input id="pwd" class="field" type="password" placeholder="Enter password" name="password">
+                            <p> </p>
+                            <img src="./assets/images/eye-close.png" id="eye1" alt="show password">
+                        </div>
+                        
+                        <lable for="confirm password" class="fieldName">Confirm Password</lable>
+                        <div class="password-container container">
+                            <input id="confirm-pwd" class="field" type="password" placeholder="Re-enter password" name="password">
+                            <p> </p>
+                            <img src="./assets/images/eye-close.png" id="eye2" alt="show password">
+                        </div>
+
+                        <p id="message"> </p>
+                        <p></p>
+                        <div class="login-btn-cont">
+                            <input id="login-btn" name="Login" onclick="checkValidPwd()" type="button" value="Signup" />
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <p class="center">or cotinue with</p>
+                <div class="button-container">
+                    <button class="thirdPartyLogin"><img class="icon" src="./assets/images/google.svg"
+                            alt="google icon"></button>
+                    <button class="thirdPartyLogin"><img class="icon" src="./assets/images/github.svg"
+                            alt="github icon"></button>
+                    <button class="thirdPartyLogin"><img class="icon" src="./assets/images/facebook.svg"
+                            alt="facebook icon"></button>
+                </div>
+
+                <p class="center">Already have an account? <a href="../login/login.html">Login</a></p>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./signup.js" async defer></script>
+</body>
+
+</html>
