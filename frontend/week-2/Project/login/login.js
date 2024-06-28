@@ -41,3 +41,24 @@ eye1.onclick = function(){
         eye1.setAttribute("style","height: 20px;");
     }
 }
+
+function checkValidPwd(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pwd").value;
+    const requestURL = "http://167.71.236.10/api/login/";
+
+    fetch(requestURL, {
+        method: "POST",
+        body: JSON.stringify({
+            "email": email,
+            "password": password
+        }),
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)})
+    .catch(error => console.log("Error:", error));
+}
