@@ -43,14 +43,14 @@ eye1.onclick = function(){
 }
 
 function checkValidPwd(){
-    var email = document.getElementById("email").value;
+    var username = document.getElementById("username").value;
     var password = document.getElementById("pwd").value;
     const requestURL = "http://167.71.236.10/api/login/";
 
     fetch(requestURL, {
         method: "POST",
         body: JSON.stringify({
-            "email": email,
+            "username": username,
             "password": password
         }),
         headers: {
@@ -59,6 +59,22 @@ function checkValidPwd(){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)})
-    .catch(error => console.log("Error:", error));
+        console.log(data);
+        if(data["message"] == "Login Successful"){
+            
+            let token = data["token"];
+            localStorage.setItem("token", token);
+            window.location.replace("http://127.0.0.1:5500/frontend/week-2/Project/login/login.html");
+            document.getElementById("msg").classList.replace("text-danger", "text-success");
+        }
+        document.getElementById("msg").style.display="block";
+        document.getElementById("msg").textContent = data["message"];
+    })
+        
+    .catch(error => {
+        console.log("error:", error);
+        document.getElementById("msg").style.display="block";
+        document.getElementById("msg").textContent = "Some error occured : " + error;
+    
+    })
 }

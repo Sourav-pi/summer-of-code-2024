@@ -26,9 +26,9 @@
                     </div>
                     <h1 class="text-center fw-bold text-primary">Login</h1>
                     <div class="form-group form-floating pb-3">
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                        placeholder="Enter email">
-                        <label for="email" >Email address</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="username"
+                        placeholder="Enter username">
+                        <label for="username" >Username</label>
                     </div>
                     <div class="input-group">
                         <div class="form-group form-floating">
@@ -40,8 +40,9 @@
                         </div>
                     </div>
                     <small class=""><a href="#" class="text-decoration-none form-text text-muted">Forgot password?</a></small>
+                    <div class="rounded-3 p-2 bg-light-subtle text-danger mt-2" id="msg" style="display: none;"></div>
                     <div class="d-flex justify-content-center pt-3" >
-                        <button type="button" class="btn btn-primary align-self-center w-100" onclick="checkValidEmail()">Submit</button>
+                        <button type="button" class="btn btn-primary align-self-center w-100" onclick="checkValidPwd()">Submit</button>
                     </div>
                     <div class="text-center pt-5 pb-2">or continue with</div>
                     <div class=" d-sm-flex d-block justify-content-center ali ">
