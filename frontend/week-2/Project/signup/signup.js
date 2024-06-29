@@ -1,7 +1,8 @@
 function checkValidPwd(){
     var pwd = document.getElementById("pwd").value;
     var cnfPwd = document.getElementById("confirm-pwd").value;
-    var msg = document.getElementById("message");
+    var msg = document.getElementById("msg");
+    msg.style.display = "block";
     if(pwd.length !=0 && cnfPwd.length !=0){
         if(pwd != cnfPwd){
             msg.textContent = "Passwords do not match.";
@@ -14,9 +15,10 @@ function checkValidPwd(){
             msg.style.color = "red";
         }
         else{
-            msg.textContent = "Passwords matched ! Signing up...";
-            msg.style.backgroundColor ="rgb(255, 255, 255)";
-            msg.style.color = "green";
+            msg.textContent = "Signing up...";
+            msg.classList.replace("text-danger", "text-success");
+            window.location.replace("http://www.w3schools.com");
+
         }
         
     }
