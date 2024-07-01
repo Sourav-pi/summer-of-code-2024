@@ -1,32 +1,3 @@
-
-// function checkValidPwd(){
-//     var pwd = document.getElementById("pwd").value;
-//     var msg = document.getElementById("message");
-//     if(pwd.length !=0){
-//         if(pwd != cnfPwd){
-//             msg.textContent = "Passwords do not match.";
-//             msg.style.backgroundColor ="rgb(255, 255, 255)";
-//             msg.style.color = "red";
-//         }
-//         else if(pwd.length < 8 || cnfPwd.length < 8){
-//             msg.textContent = "Password must be atleast 8 characters long.";
-//             msg.style.backgroundColor ="rgb(255, 255, 255)";
-//             msg.style.color = "red";
-//         }
-//         else{
-//             msg.textContent = "Passwords matched ! Signing up...";
-//             msg.style.backgroundColor ="rgb(255, 255, 255)";
-//             msg.style.color = "green";
-//         }
-        
-//     }
-//     else{
-//         msg.textContent = "Password cannot be empty !";
-//         msg.style.backgroundColor ="rgb(255, 255, 255)";
-//         msg.style.color = "red";
-//     }
-// }
-
 let eye1 = document.getElementById("eye1");
 let pwd = document.getElementById("pwd");
 eye1.onclick = function(){
@@ -63,8 +34,8 @@ function checkValidPwd(){
         if(data["message"] == "Login Successful"){
             
             let token = data["token"];
-            localStorage.setItem("token", token);
-            window.location.replace("http://127.0.0.1:5500/frontend/week-2/Project/login/login.html");
+            sessionStorage.setItem("token", token);
+            window.location.replace(`./cashier-dashboard/cboard.html?token=${token}`);
             document.getElementById("msg").classList.replace("text-danger", "text-success");
         }
         document.getElementById("msg").style.display="block";
