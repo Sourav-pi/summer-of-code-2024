@@ -12,12 +12,16 @@
         #profile-img:hover{
             box-shadow: 2px 2px 2px #b3afaf;
         }
+        #add-btn:hover{
+            opacity: 0.7;
+        }
     </style>
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navbar-expand navbar border-bottom-2 border-bottom">
         <div class="container">
-            <a href="#" class="navbar-brand">Cashier Dashboard</a>
+            <a href="#" class="navbar-brand fw-bold font-monospace fs-3">Cashier Dashboard</a>
             <div class=" h-100 align-content-center">
 
                 <ul class="navbar-nav">
@@ -34,6 +38,111 @@
 
         </div>
     </nav>
+
+    <!-- Forms -->
+    <div class="container w-100 p-0 d-block justify-content-center">
+        <!-- Customer Details -->
+        <div class="container w-100 d-flex ">
+            <form class="form-container col-lg-8 col-md-12 col-12 p-3">
+                <p class="fw-bold text-primary fs-2">Customer Details</p>
+                <div class="form-group form-floating pb-3">
+                    <input type="text" class="form-control" id="c-name" aria-describedby="customer name"
+                    placeholder="Customer Name">
+                    <label for="c-name" >Customer Name</label>
+                </div>
+                <div class="input-group">
+                    <div class="input-group" >
+                        <input type="text" value="+91" class="input-group-text" style="width: 60px;" disabled>
+                        <div class="form-group form-floating">
+                            <input type="number" class="form-control" id="phoneNum" placeholder="Contact Number">
+                            <label for="phoneNum">Contact Number</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Product Details -->
+        <div class="container w-100 d-flex">
+            <form class="form-container col-12 p-3">
+                <p class="text-body-emphasis fs-2">Add Products</p>
+                <!-- Product add form -->
+
+                <div class="all-products w-100 m-0 p-0 d-grid">
+                    <div class="product-row container m-0 p-0 d-md-flex">
+
+                        <div class="form-group form-floating me-2 pb-3" style="width: 120px;">
+                            <input type="text" class="form-control" id="SKU" aria-describedby="SKU"
+                            placeholder="#SKU">
+                            <label for="SKU" >#SKU</label>
+                        </div>
+                        
+                        <div class="form-group form-floating col pb-3 me-2">
+                            <input type="text" class="form-control" readonly id="ProductName" aria-describedby="Product Name"
+                            placeholder="Product Name">
+                            <label for="ProductName">Product Name</label>
+                        </div>
+
+                        <div class="input-group d-flex" style="width: 280px; flex-wrap:nowrap">
+                            <div class="form-group form-floating pb-3" style="width: 80px;">
+                                <input type="number" class="form-control" id="qty" aria-describedby="Product Name"
+                                placeholder="Qty">
+                                <label for="qty">Qty</label>
+                            </div>
+                            
+                            <div class="form-group form-floating pb-3" style="width: 100px;">
+                                <input type="number" class="form-control px-2"  id="ppq" aria-describedby="Product Name"
+                                placeholder="Price">
+                                <label for="ppq">Price</label>
+                            </div>
+                            
+                            <div class="form-group form-floating pb-3" style="width: 100px;">
+                                <input type="number" class="form-control px-2" readonly id="total" aria-describedby="Product Name"
+                                placeholder="Total">
+                                <label for="total">Total</label>
+                            </div>
+
+                            <div class=" d-flex align-items-center px-2 justify-content-center pb-3" style="width: max-content;">
+                                <img src="./assets/images/plus.png" onclick="addRow()" class="rounded-circle p-0 m-0 btn"  alt="add row" id="add-btn" style="height: 40px;" >
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+
+                <!-- bill -->
+                <div class="border-bottom-5 border-bottom mb-3">
+                    <p>Added Products</p>
+                    <div id="bill-table" class="table-borderless">
+                        <!-- Header Row -->
+                        <div class="row bg-light-subtle border-bottom-1 border-bottom" id="table-lables">   
+                            <div class="col">
+                                <p class="text-primary">SKU</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-primary">Product Name</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-primary">Quantity</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-primary">Price</p>
+                            </div>
+                            <div class="col">
+                                <p class="text-primary">Total</p>
+                            </div>
+                        </div>
+                        <!-- Body Rows -->
+
+                        <!-- body rows will be injected here -->
+
+                        <!--Body Rows end -->
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./cboard.js"></script>
