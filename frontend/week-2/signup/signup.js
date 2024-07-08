@@ -1,29 +1,24 @@
 function checkValidPwd(){
     var pwd = document.getElementById("pwd").value;
     var cnfPwd = document.getElementById("confirm-pwd").value;
-    var msg = document.getElementById("message");
+    var msg = document.getElementById("msg");
+    msg.style.display = "block";
     if(pwd.length !=0 && cnfPwd.length !=0){
         if(pwd != cnfPwd){
             msg.textContent = "Passwords do not match.";
-            msg.style.backgroundColor ="rgb(255, 255, 255)";
-            msg.style.color = "red";
         }
         else if(pwd.length < 8 || cnfPwd.length < 8){
             msg.textContent = "Password must be atleast 8 characters long.";
-            msg.style.backgroundColor ="rgb(255, 255, 255)";
-            msg.style.color = "red";
         }
         else{
-            msg.textContent = "Passwords matched ! Signing up...";
-            msg.style.backgroundColor ="rgb(255, 255, 255)";
-            msg.style.color = "green";
+            msg.textContent = "Signing up...";
+            msg.classList.replace("text-danger", "text-success");
+            window.location.replace("../login/login.html");
         }
         
     }
     else{
         msg.textContent = "Password cannot be empty !";
-        msg.style.backgroundColor ="rgb(255, 255, 255)";
-        msg.style.color = "red";
     }
 }
 

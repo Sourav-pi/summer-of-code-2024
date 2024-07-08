@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+    #logout-btn:hover{
+            color: white;
+        }
+    #profile-img:hover{
+            box-shadow: 2px 2px 2px #b3afaf;
+        }
+    #analysis-icon:hover{
+        box-shadow: 2px 2px 2px #b3afaf;
+    }
+    </style>
+  </head>
+  <body style="background-image: url(./assets/images/background.png);">
+    <!-- Navbar -->
+    <nav class="navbar-expand navbar border-bottom-2 bg-transparent border-bottom" style="backdrop-filter:blur(2px); box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.7);" >
+        <div class="container">
+            <a href="#" class="navbar-brand">Admin Dashboard</a>
+            <div class=" h-100 align-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link my-0 py-0">
+                            <img src="./assets/images/profile.png" class="mt-1 rounded-circle" id="profile-img" style="height: 40px;" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link my-0 py-0">
+                            <img src="./assets/images/analytics.png" class=" mt-1" id="analysis-icon" style="height: 40px;" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item btn btn-outline-warning mx-2">
+                        <button class="btn nav-link py-1">Logout</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Top sold items -->
+     <div class="container d-grid my-4 gap-3">
+    <h3 class="text-center text-primary">Top sold items</h3>
+        <!-- row -->
+        <div class="row gap-3 justify-content-center">
+            <!-- card -->
+            <div class="col bg-white shadow rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+                <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                    <p class="text-primary-emphasis fs-4 mx-1"> #1 </p> 
+                    <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="col bg-white shadow  rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+                <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                    <p class="text-primary-emphasis fs-4 mx-1"> #2 </p> 
+                    <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="col bg-white shadow  rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+                <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                    <p class="text-primary-emphasis fs-4 mx-1"> #3 </p> 
+                    <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+                </div>
+            </div>
+            <!-- card end -->
+        </div>
+        <!-- row end -->
+        
+        <!-- row -->
+        <div class="row gap-3 justify-content-center">
+            <!-- card -->
+           <div class="col bg-white shadow  rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+               <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                   <p class="text-primary-emphasis fs-4 mx-1"> #4 </p> 
+                   <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+               </div>
+               <div class="container-fluid d-flex">
+                   <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                   <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+               </div>
+               <div class="container-fluid d-flex">
+                   <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                   <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+               </div>
+           </div>
+           <!-- card end -->
+            <!-- card -->
+            <div class="col bg-white shadow rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+                <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                    <p class="text-primary-emphasis fs-4 mx-1"> #1 </p> 
+                    <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card -->
+            <div class="col bg-white shadow  rounded-3 align-content-center py-2" style="min-height : 200px; max-width: 300px;" >
+                <div class="container-fluid d-flex bg-primary-subtle rounded-3">
+                    <p class="text-primary-emphasis fs-4 mx-1"> #2 </p> 
+                    <p class="text-primary-emphasis fs-4 mx-1">Item Name</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Qty : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">100</p>
+                </div>
+                <div class="container-fluid d-flex">
+                    <p class="text-primary fs-4 mx-1 w-50"> Sale : </p> 
+                    <p class="text-dark-emphasis fs-4 mx-1 w-50">$ 5500</p>
+                </div>
+            </div>
+            <!-- card end -->
+        </div>
+        <!-- row end -->
+    </div>
+    <div class="container">
+        <h3 class="text-center text-primary">Product Analysis</h3>
+
+        <div class="input-group container justify-content-center align-items-center mb-3">
+            <p class="my-0 me-2 form-label fs-5">Select product to analyse :      </p>
+            <select class="custom-select w-50 rounded-1 fs-5 " id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./aboard.js"></script>
+  </body>
+</html>
