@@ -4,6 +4,7 @@ interface Props {
   contentAfterButton?: React.ReactNode;
   children?: React.ReactNode;
   title?: string;
+  onSubmit: () => void;
 }
 
 const CenterForm = ({
@@ -12,6 +13,7 @@ const CenterForm = ({
   children = null,
   title = "Form",
   contentAfterButton = null,
+  onSubmit,
 }: Props) => {
   return (
     <div className="container d-flex justify-content-center min-vh-100 align-items-center">
@@ -25,7 +27,7 @@ const CenterForm = ({
             backdropFilter: "blur(3px)",
           }}
         >
-          <form className="form-container w-100 p-3">
+          <form className="form-container w-100 p-3" onSubmit={onSubmit}>
             {logo && (
               <div className="logo-container d-flex justify-content-center pb-4">
                 <img
@@ -44,7 +46,7 @@ const CenterForm = ({
               <button
                 type="button"
                 className="btn btn-primary align-self-center w-100"
-                // onclick="checkValidPwd()"
+                onClick={onSubmit}
               >
                 Submit
               </button>

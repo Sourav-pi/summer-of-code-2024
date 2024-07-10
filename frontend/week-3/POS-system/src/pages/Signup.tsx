@@ -2,6 +2,7 @@ import CenterForm from "../components/CenterForm";
 import PasswordField from "../components/PasswordField";
 import TextField from "../components/TextField";
 import ThirdPartyAuth from "../components/ThirdPartyAuth";
+import MsgBox from "../components/MsgBox";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -33,6 +34,7 @@ const signup = () => {
           logo={true}
           logoPath={logo}
           contentAfterButton={contentAfterButton}
+          onSubmit={() => {}}
         >
           <TextField label={"Email"} placeholder={"Enter your email"} />
           <PasswordField />
@@ -40,6 +42,7 @@ const signup = () => {
             label={"Confirm Password"}
             placeholder={"Re-enter your password"}
           />
+          <MsgBox></MsgBox>
         </CenterForm>
       </body>
     </>
