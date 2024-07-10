@@ -5,11 +5,13 @@ import eyeOpen from "../assets/images/eyeOpen.png";
 interface Props {
   label?: string;
   placeholder?: string;
+  id?: string;
 }
 
 const PasswordField = ({
   label = "Password",
   placeholder = "Enter your password",
+  id = label,
 }: Props) => {
   let [showPassState, setShowPassState] = useState(false);
   return (
@@ -19,7 +21,7 @@ const PasswordField = ({
           <input
             type={showPassState ? "text" : "password"}
             className="form-control"
-            id={label}
+            id={id}
             placeholder={placeholder}
           />
           <label htmlFor={label}>{label}</label>
