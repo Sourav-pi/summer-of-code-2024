@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CashierDashboard from "./pages/CashierDashboard";
 import "bootstrap/dist/css/bootstrap.css";
 
 const App = () => {
@@ -12,6 +13,10 @@ const App = () => {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/cashier",
+      element: <CashierDashboard />,
     },
   ]);
   return <RouterProvider router={router} />;
