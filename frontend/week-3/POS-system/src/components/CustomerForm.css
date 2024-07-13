@@ -1,0 +1,30 @@
+.error{
+    border : 1px solid red !important;
+}
+
+.submit-btn {
+    background-color: #FF7A28 !important;
+    border: none;
+    color: white !important; /* Ensures text color is readable */
+    padding: 10px 20px; /* Adds some padding */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s; /* Adds a smooth transition for the background color */
+  }
+  
+  .submit-btn:hover {
+    background-color: #E66A21 !important; /* Slightly darker color for hover effect */
+  }
+  
+  .errorMsg{
+    color: red;
+    text-align: right;
+    margin-top: 5px;
+    font-size: smaller;
+    height: 25px;
+  }
+
+  .arrangeContainer{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items:center !important;
+  }

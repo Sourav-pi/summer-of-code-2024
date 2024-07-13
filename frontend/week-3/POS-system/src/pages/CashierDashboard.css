@@ -1,0 +1,12 @@
+.layout{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25vw 1fr 25vw;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "nav nav nav"
+    "cashierCard customerForm enteredDetails";
+    gap: 20px;
+    row-gap: 0px;
+}

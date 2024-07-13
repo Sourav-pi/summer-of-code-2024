@@ -1,3 +1,6 @@
 body{
-    background: #C8C8C8;
+    background: rgba(244, 244, 244, 1);
+}
+#root{
+    height: 100vh;
 }

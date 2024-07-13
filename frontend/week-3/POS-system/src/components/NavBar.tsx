@@ -5,12 +5,20 @@ import search from "../assets/images/search.png";
 interface Props {
   state?: boolean;
   imgURL?: string;
+  style?: React.CSSProperties;
 }
 
-const NavBar = ({ state = false, imgURL = "" }: Props) => {
+const NavBar = ({
+  state = false,
+  imgURL = "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+  style,
+}: Props) => {
   if (!state) {
     return (
-      <div className="navbar navbar-expand-lg bg-body-tertiary ps-2 pe-2">
+      <div
+        className="navbar navbar-expand-lg bg-white border-bottom-1 border-bottom ps-2 pe-2"
+        style={style}
+      >
         <img
           src={logo}
           className="navbar-brand"
