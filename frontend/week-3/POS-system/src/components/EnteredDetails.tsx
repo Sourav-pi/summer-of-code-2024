@@ -1,11 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import "./EnteredDetails.css";
 
 interface Props {
   style?: React.CSSProperties;
   state?: boolean;
+  name?: string;
+  mobile?: string;
+  address?: string;
 }
 
-const EnteredDetails = ({ style = {}, state = false }: Props) => {
+const EnteredDetails = ({
+  style = {},
+  state = false,
+  name = "NA",
+  mobile = "NA",
+  address = "NA",
+}: Props) => {
   const headStyle = {
     fontWeight: "normal",
     paddingBottom: "1rem",
@@ -13,6 +23,7 @@ const EnteredDetails = ({ style = {}, state = false }: Props) => {
     color: "#FF7A28",
     marginBottom: "2rem",
   };
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -52,7 +63,7 @@ const EnteredDetails = ({ style = {}, state = false }: Props) => {
                   display: "flex",
                 }}
               >
-                <p className="text-center m-auto fs-5">Item name</p>
+                <p className="text-center m-auto fs-5">{name}</p>
               </div>
             </div>
 
@@ -75,7 +86,7 @@ const EnteredDetails = ({ style = {}, state = false }: Props) => {
                   display: "flex",
                 }}
               >
-                <p className="text-center m-auto fs-5">94372345678</p>
+                <p className="text-center m-auto fs-5">{mobile}</p>
               </div>
             </div>
 
@@ -98,7 +109,7 @@ const EnteredDetails = ({ style = {}, state = false }: Props) => {
                   display: "flex",
                 }}
               >
-                <p className="text-center m-auto fs-5">None</p>
+                <p className="text-center m-auto fs-5">{address}</p>
               </div>
             </div>
           </div>
@@ -106,8 +117,9 @@ const EnteredDetails = ({ style = {}, state = false }: Props) => {
             className="btn submit-btn fs-5 w-100 mt-3"
             id="submit"
             style={{ justifySelf: "flex-end" }}
+            onClick={() => navigate("/billing")}
           >
-            GO
+            Proceed to checkout ➜
           </button>
         </>
       ) : (

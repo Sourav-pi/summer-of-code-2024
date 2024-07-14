@@ -1,6 +1,7 @@
 import { useFormik } from "Formik";
 import { CustomerValidation } from "../validation/CustomerValidation";
 import "./CustomerForm.css";
+import { useState } from "react";
 
 interface Props {
   onSubmit: any;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const CustomerForm = ({ onSubmit, style }: Props) => {
+  const [submited, setSubmited] = useState(false);
   const headStyle = {
     fontWeight: "normal",
     paddingBottom: "1rem",
@@ -21,11 +23,35 @@ const CustomerForm = ({ onSubmit, style }: Props) => {
   const { handleSubmit, handleBlur, handleChange, errors } = useFormik({
     initialValues: {
       name: "",
-      mobile: "",
+      phone: "",
       address: "",
     },
     validationSchema: CustomerValidation,
-    onSubmit: onSubmit,
+    onSubmit: (values) => {
+      // console.log(values);
+      setSubmited(true);
+      fetch("https://dsoc-2024.webredirect.org/api/staff/customer/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(values),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data.message == "Customer added!") {
+            sessionStorage.setItem("customerID", data.customerID);
+            sessionStorage.setItem("customerName", data.name);
+          }
+          onSubmit(values);
+        })
+        .catch((error) => {
+          console.error(error);
+          setSubmited(false);
+        });
+    },
   });
   console.log(errors);
   return (
@@ -83,7 +109,7 @@ const CustomerForm = ({ onSubmit, style }: Props) => {
             <div style={{ gridArea: "b", ...divStyle }}>
               <div className="arrangeContainer">
                 <label
-                  htmlFor="mobile"
+                  htmlFor="phone"
                   className="form-label d-inline fs-4"
                   style={lableStyle}
                 >
@@ -91,13 +117,13 @@ const CustomerForm = ({ onSubmit, style }: Props) => {
                 </label>
                 <input
                   type="text"
-                  id="mobile"
-                  name="mobile"
+                  id="phone"
+                  name="phone"
                   placeholder="Enter customer mobile"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.mobile
+                    errors.phone
                       ? "error form-control d-inline"
                       : "form-control d-inline"
                   }
@@ -105,7 +131,7 @@ const CustomerForm = ({ onSubmit, style }: Props) => {
                 />
               </div>
               <div className="text-danger d-block errorMsg">
-                {errors.mobile ? errors.mobile : ""}
+                {errors.phone ? errors.phone : ""}
               </div>
             </div>
 
@@ -141,13 +167,19 @@ const CustomerForm = ({ onSubmit, style }: Props) => {
               </div>
             </div>
           </div>
+          <div className="arrangeContainer">
+            <div className="text-muted d-inline">
+              {"(*) marked fields are mandatory"}
+            </div>
+            <button
+              type="submit"
+              {...(submited ? { disabled: true } : null)}
+              className="btn submit-btn fs-5"
+            >
+              GO
+            </button>
+          </div>
         </form>
-      </div>
-      <div className="arrangeContainer">
-        <div className="text-muted d-inline">
-          {"(*) marked fields are mandatory"}
-        </div>
-        <button className="btn submit-btn fs-5">GO</button>
       </div>
     </div>
   );

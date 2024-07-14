@@ -3,22 +3,34 @@ import CustomerForm from "../components/CustomerForm";
 import CashierCard from "../components/CashierCard";
 import EnteredDetails from "../components/EnteredDetails";
 import "./CashierDashboard.css";
+import { useState } from "react";
 
 const CashierDashboard = () => {
+  let [state, setState] = useState(false);
+  let [name, setName] = useState("");
+  let [mobile, setMobile] = useState("");
+  let [address, setAddress] = useState("");
+
   return (
-    // <>
-    //   <NavBar state={true} />
-    //   <CashierCard></CashierCard>
-    //   {/* <CustomerForm></CustomerForm> */}
-    // </>
     <div className="layout">
       <NavBar state={false} style={{ gridArea: "nav" }} />
       <CashierCard style={{ gridArea: "cashierCard" }} />
       <CustomerForm
         style={{ gridArea: "customerForm", margin: "20px 0px" }}
-        onSubmit={() => console.log("submitted")}
+        onSubmit={(values: any) => {
+          setState(true);
+          setName(values.name);
+          setMobile(values.phone);
+          setAddress(values.address);
+        }}
       />
-      <EnteredDetails style={{ gridArea: "enteredDetails" }}></EnteredDetails>
+      <EnteredDetails
+        style={{ gridArea: "enteredDetails" }}
+        state={state}
+        name={name}
+        mobile={mobile}
+        address={address}
+      ></EnteredDetails>
     </div>
   );
 };

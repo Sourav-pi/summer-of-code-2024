@@ -1,0 +1,13 @@
+/* GridContainer.module.css */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; /* Adjust the gap between cards as needed */
+  padding: 10px;
+}
+
+.gridItem {
+  background-color: #ffffff; /* Example background color */
+  padding: 16px; /* Example padding */
+  border-radius: 12px;
+}

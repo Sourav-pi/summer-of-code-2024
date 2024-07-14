@@ -41,9 +41,8 @@ const Login = () => {
         if (data["message"] == "Login Successful") {
           let token = data["token"];
           sessionStorage.setItem("token", token);
-          window.location.replace(
-            `./cashier-dashboard/cboard.html?token=${token}`
-          );
+          console.log(sessionStorage.getItem("token"));
+          window.location.replace(`./cashier-dashboard/cashier`);
           msgbox.classList.replace("text-danger", "text-success");
         }
         msgbox.style.display = "block";

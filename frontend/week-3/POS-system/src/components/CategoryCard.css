@@ -1,0 +1,36 @@
+.option-container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px 50px;
+  font-size: medium;
+}
+p {
+  margin: 0px;
+}
+.outer-container {
+  height: 100%;
+  /* display: flex;
+    flex-direction: column;
+    background-color: white;
+    row-gap: 20px; */
+}
+.outer-option-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.head-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.clicked {
+  background-color: rgba(217, 217, 217, 1);
+  border-left: 12px solid rgba(255, 122, 40, 1);
+  color: rgba(255, 122, 40, 1);
+}

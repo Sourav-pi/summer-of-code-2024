@@ -72,7 +72,10 @@ const NavBar = ({
     );
   } else {
     return (
-      <div className="navbar navbar-expand-lg bg-body-tertiary ps-2 pe-2">
+      <div
+        className="navbar navbar-expand-lg bg-body-tertiary ps-2 pe-2 border border-bottom-1"
+        style={style}
+      >
         <img
           src={logo}
           className="navbar-brand"
@@ -83,7 +86,8 @@ const NavBar = ({
           className="ms-auto w-50"
           style={{
             display: "grid",
-            gridTemplateColumns: "50px 1fr 60px ",
+            gridTemplateColumns: "50px 1fr ",
+            gap: "10px",
           }}
         >
           <div
@@ -106,12 +110,12 @@ const NavBar = ({
           <div className="input-group" style={{ padding: "0px 5px" }}>
             <div className="form-group form-floating">
               <input
-                type={"text"}
+                type="text"
                 className="form-control"
                 id="search"
-                placeholder={"search"}
+                placeholder="search"
               />
-              <label htmlFor="search">"search"</label>
+              <label htmlFor="search">search</label>
             </div>
             <div
               className="input-group-text"
@@ -133,7 +137,7 @@ const NavBar = ({
               />
             </div>
           </div>
-          <button
+          {/* <button
             className="btn fs-3 col"
             style={{
               margin: "0px 5px",
@@ -145,7 +149,7 @@ const NavBar = ({
             }}
           >
             <img src={back} alt="" style={{ height: "50px" }} />
-          </button>
+          </button> */}
         </div>
       </div>
     );

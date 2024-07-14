@@ -1,0 +1,11 @@
+.Billing-page-layout {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15vw 1fr 30vw;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "nav nav orderMenu"
+    "categoryCard availableItems orderMenu";
+  row-gap: 0px;
+}

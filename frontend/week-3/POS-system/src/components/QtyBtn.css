@@ -1,0 +1,24 @@
+.qty-btn {
+  background-color: rgba(255, 122, 40, 1);
+  color: white;
+  width: 30px;
+  text-align: center;
+  border: none;
+}
+.qty-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 122, 40, 0.8);
+}
+
+.qty-value {
+  width: 40px;
+  text-align: center;
+  border: none;
+  color: black;
+  padding: auto 0px;
+}
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
